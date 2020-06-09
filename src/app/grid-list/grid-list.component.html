@@ -1,0 +1,28 @@
+<mat-grid-list [rowHeight]="rowHeight" [cols]="cols" [gutterSize]=gutterSize>
+	<ng-container *ngFor="let row of rows">
+		<ng-container *ngIf="!row?.head_foot; else head_foot">
+			<mat-grid-tile colspan="{{row.colspan ? row.colspan : 1}}" rowspan="{{row.rowspan ? row.rowspan : 1}}"><ng-container *ngIf="row.button; then button; else val"></ng-container></mat-grid-tile>
+		</ng-container>
+
+		<ng-template #button>
+			<button mat-raised-button color="{{row.color ? row.color : 'default'}}" routerLink="{{row.link ? row.link : ''}}">
+				<ng-container *ngIf="row?.icon; then icon; else btn_val"></ng-container>
+				<ng-template #icon><mat-icon>{{row?.icon}}</mat-icon></ng-template>
+				<ng-template #btn_val>{{row.val}}</ng-template>
+			</button>
+		</ng-template>
+		<ng-template #val>{{row.val}}</ng-template>
+
+		<ng-template #head_foot>
+			<ng-container *ngIf="row?.head_foot === 'header'; else footer">
+				<mat-grid-tile-header>{{row.val}}</mat-grid-tile-header>
+			</ng-container>
+
+			<ng-template #footer>
+				<mat-grid-tile-footer>{{row.val}}</mat-grid-tile-footer>
+			</ng-template>
+		</ng-template>
+	</ng-container>
+</mat-grid-list>
+
+
