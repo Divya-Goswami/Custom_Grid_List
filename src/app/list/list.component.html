@@ -4,8 +4,8 @@
 
 
   <mat-card-content>
-    <grid-list cols="6" rowHeight="50px" gutterSize="5px" [rows]="header_rows"></grid-list>
-    <grid-list cols="6" rowHeight="50px" gutterSize="5px" [rows]="rows"></grid-list>
+    <grid-list cols="5" rowHeight="50px" gutterSize="5px" [rows]="header_rows"></grid-list>
+    <grid-list cols="5" rowHeight="50px" gutterSize="5px" [rows]="rows" (onSelectedItem)="selectedItem($event)"></grid-list>
 
    <br><h1>With Header multiple rowspan and colspan </h1>
     <grid-list rowHeight="50px" gutterSize="5px" [rows]="header_rows2"></grid-list>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
 	selector: 'grid-list',
@@ -12,9 +12,16 @@ export class GridListComponent implements OnInit {
 	@Input() gutterSize: string = "1px";
 	@Input() rowHeight: string | number = "1:1";
 
+	@Output() onSelectedItem: EventEmitter<any> = new EventEmitter<any>();
+
 
 
 	ngOnInit(): void {
 		console.log(this.cols)
+	}
+
+	onSelected(param) {
+		this.onSelectedItem.emit(param);
+		console.log('Child Class Get Param on Click Event '+param)
 	}
 }

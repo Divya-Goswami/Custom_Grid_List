@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 // import { MaterialModule } from '@angular/material';
 import {MatSliderModule} from '@angular/material/slider';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { AddressComponent } from './address/address.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
@@ -21,14 +20,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
 import { GridListComponent } from './grid-list/grid-list.component';
 import { AddComponent } from './add/add.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddressComponent,
     ListComponent,
     GridListComponent,
-    AddComponent
+    AddComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
